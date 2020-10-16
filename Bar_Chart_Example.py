@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 plt.rc('font', family='chosunilboNM', size=13)
 
 # Import excel data
-raw_data = pd.read_excel('base_wage_in_Japan.xlsx', header=0)
+data_adrs = // address to data file
+raw_data = pd.read_excel(data_adrs, header=0)
 npdata = raw_data.to_numpy()
 
 # Get a new cmap

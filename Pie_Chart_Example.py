@@ -11,7 +11,7 @@ import numpy as np
 plt.rc('font', family='chosunilboNM', size=11)
 
 # Import excel data
-data_adrs = 'sample_data.xlsx'
+data_adrs = // directory to data file
 
 # When no headers exist, you have to state header=None explicitly.
 # Pandas read method returns DataFrame
