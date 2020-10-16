@@ -1,3 +1,3 @@
 # Data_Visualization
 
-This is a respiratory to store data visualization python codes.
+This is a repository to store data visualization python codes.
