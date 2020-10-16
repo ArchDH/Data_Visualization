@@ -1,16 +1,22 @@
-# Pie chart example
+"""
+Python Visualization
+Title : Pie Chart Example
+Data : 15th OCT 2020
+"""
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-# Change font to a Korean font
+# Set a Korean font
 plt.rc('font', family='chosunilboNM', size=11)
 
 # Import excel data
 data_adrs = 'sample_data.xlsx'
+
 # When no headers exist, you have to state header=None explicitly.
 # Pandas read method returns DataFrame
-data = pd.read_excel(data_adrs, header=None)
+data = pd.read_excel(data_adrs, header=0)
+
 # to numpy 2d array
 npdata = data.to_numpy()
 row_size = npdata.shape[1]
@@ -40,5 +46,5 @@ for num in range(3):
 
 fig.suptitle("외자계 기업의 일본지사에 대한 조사 (2018년 일본정부)", fontsize=18, y=1.02)
 plt.tight_layout()
-#plt.show()
-plt.savefig(fname='figure.jpeg', facecolor=None, dpi=1200, bbox_inches='tight')
+plt.show()
+#plt.savefig(fname='figure.jpeg', facecolor=None, dpi=1200, bbox_inches='tight')

@@ -1,3 +1,8 @@
+"""
+Python Visualization
+Title : Bar Chart Example
+Data : 16th OCT 2020
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -17,7 +22,7 @@ def annotate(bars, num):
     for bar in bars:
         height = bar.get_height()
         ax[num].annotate('{} 만엔'.format(height),
-                         xy=(bar.get_x()+bar.get_width()/2, height), xytext=(0, 10),
+                         xy=(bar.get_x() + bar.get_width() / 2, height), xytext=(0, 10),
                          textcoords="offset points",
                          ha='center', va='bottom')
 
@@ -39,4 +44,4 @@ annotate(bars2, 1)
 
 fig.suptitle("일본 직장인의 나이에 따른 연봉 및 기본급 평균 (2018년 일본정부)", y=1.05)
 fig.tight_layout()
-plt.savefig(fname='figure1.jpeg', facecolor=None, dpi=1200, bbox_inches='tight')
+plt.savefig(fname='figure.jpeg', facecolor=None, dpi=900, bbox_inches='tight')
