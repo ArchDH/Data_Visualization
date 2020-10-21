@@ -34,8 +34,8 @@ for num in range(3):
 
     for i, p in enumerate(wedges):
         ang = (p.theta2 - p.theta1)/2 + p.theta1
-        y = np.sin(np.deg2rad(ang))
         x = np.cos(np.deg2rad(ang))
+        y = np.sin(np.deg2rad(ang))
         horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
         connectionstyle = "angle,angleA=0,angleB={}".format(ang)
         kw["arrowprops"].update({"connectionstyle": connectionstyle})
