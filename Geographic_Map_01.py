@@ -1,6 +1,7 @@
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Get Korean font
 plt.rc('font', family='chosunilboNM', size=13)
@@ -15,7 +16,7 @@ tokyo = tokyo[:113]
 url_rent = 'https://raw.githubusercontent.com/ArchDH/Data_Visualization/main/excel_data/average_rent_in_Tokyo_2020.xlsx'
 avr_rent = pd.read_excel(url_rent)
 
-rent = [0]*tokyo.shape[0]
+rent = np.zeros(shape=(tokyo.shape[0], 0))
 for i, ward in enumerate(tokyo['N03_004'][:113]):
     rent[i] = (avr_rent.loc[avr_rent['district'] == ward]['1K/1DK'].to_numpy()[0][:3])
 tokyo['avr_rent'] = rent
@@ -42,6 +43,8 @@ for (i, ward), cent in zip(enumerate(tokyo[:-1]['N03_004']), tokyo['centroid']):
     if ward != tokyo['N03_004'].at[i+1]:
         kr_ward = translator.translate(ward, dest='korean')
         ax.annotate(kr_ward.text, xy=(cent.x, cent.y))
+    else:
+        break
 
 plt.title("도쿄 23구내 월세평균", size=16)
 plt.tight_layout()
